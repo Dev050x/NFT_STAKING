@@ -52,7 +52,7 @@ pub struct Stake<'info> {
     #[account(
         mut,
         seeds = [b"user".as_ref() , user.key().as_ref()],
-        bump = UserAccount.bump,
+        bump = user_account.bump,
     )]
     pub user_account: Account<'info, UserAccount>,
 
@@ -67,7 +67,7 @@ pub struct Stake<'info> {
         payer = user,
         seeds = [b"stake".as_ref() , mint.key().as_ref() , config.key().as_ref() ],
         bump ,
-        space = 8 + StakeAccount.INIT_SPACE,
+        space = 8 + StakeAccount::INIT_SPACE,
     )]
     pub stake_account: Account<'info, StakeAccount>,
     pub metadata_program: Program<'info, Metadata>,

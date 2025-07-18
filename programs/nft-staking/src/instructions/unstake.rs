@@ -50,7 +50,7 @@ pub struct Unstake<'info> {
     #[account(
         mut,
         seeds = [b"user".as_ref() , user.key().as_ref()],
-        bump = UserAccount.bump,
+        bump = user_account.bump,
     )]
     pub user_account: Account<'info, UserAccount>,
 
