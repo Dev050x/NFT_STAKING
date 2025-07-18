@@ -4,4 +4,6 @@ use anchor_lang::prelude::*;
 pub enum ErrorCode {
     #[msg("maximum stake reached")]
     MaxStake,
+    #[msg("nft is locked untill passed freeze period")]
+    Locked,
 }

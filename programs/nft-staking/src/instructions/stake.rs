@@ -7,6 +7,7 @@ use anchor_spl::{
         MasterEditionAccount, Metadata, MetadataAccount,
     },
     token::{approve, Approve, Mint, Token, TokenAccount},
+    associated_token
 };
 
 use crate::error::ErrorCode;

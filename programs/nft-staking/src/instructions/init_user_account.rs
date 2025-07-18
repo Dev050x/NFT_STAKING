@@ -4,7 +4,7 @@ use crate::state::UserAccount;
 
 
 #[derive(Accounts)]
-pub struct InitiallzeUser<'info>{
+pub struct InitializeUser<'info>{
     #[account(mut)]
     pub user:Signer<'info>,
     #[account(
@@ -19,7 +19,7 @@ pub struct InitiallzeUser<'info>{
 }
 
 impl<'info> InitializeUser<'info> {
-    pub fn init_user_account(&mut self , bumps:&InitiallzeUserBumps) -> Result<()> {
+    pub fn init_user_account(&mut self , bumps:&InitializeUserBumps) -> Result<()> {
 
         self.user_account.set_inner(UserAccount{
             points:0,
